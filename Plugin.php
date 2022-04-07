@@ -1,4 +1,4 @@
-<?php namespace Bedard\Debugbar;
+<?php namespace RainLab\Debugbar;
 
 use App;
 use Event;
@@ -48,7 +48,7 @@ class Plugin extends PluginBase
 
         // Register middleware
         if (\Config::get('app.debugAjax', false)) {
-            $this->app['Illuminate\Contracts\Http\Kernel']->pushMiddleware('\Bedard\Debugbar\Middleware\Debugbar');
+            $this->app['Illuminate\Contracts\Http\Kernel']->pushMiddleware('\RainLab\Debugbar\Middleware\Debugbar');
         }
 
         Event::listen('cms.page.beforeDisplay', function($controller, $url, $page)
